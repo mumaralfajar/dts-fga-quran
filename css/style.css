@@ -44,6 +44,7 @@ sub {
 }
 
 label {
+    margin-top: 12px;
     font-family: 'Heebo', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;

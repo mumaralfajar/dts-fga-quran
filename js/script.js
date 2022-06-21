@@ -26,21 +26,10 @@ function getAyah(callback) {
 }
 
 function masok() {
-    $( "main" ).fadeIn( "slow");
+    $( "main" ).fadeIn(1500);
 }
 
 getBtn.addEventListener('click', function () {
-    // if (isFilled = true) {
-    //     $( "main" ).fadeOut( "slow", function() {
-    //         $( "main" ).fadeIn( "slow", function() {
-    //             getAyah();
-    //         });
-    //     });
-    // } else {
-    //     $( "main" ).fadeIn( "slow", function() {
-    //         getAyah();
-    //     });
-    // }
     $( "main" ).fadeOut( "slow", function() {
         getAyah(masok);
     });
