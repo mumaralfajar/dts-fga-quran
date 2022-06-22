@@ -38,7 +38,7 @@ getBtn.addEventListener('click', function () {
 window.onload = function () {
     Particles.init({
         selector: '.background',
-        color: 'green',
+        color: '#EFEFBB',
         maxParticles: 300,
 
         // options for breakpoints
