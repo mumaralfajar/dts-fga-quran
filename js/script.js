@@ -8,7 +8,17 @@ function getAyah(callback) {
             let ayat = data["data"]["text"]
             let surah = data["data"]["surah"]["englishName"]
             let noAyah = data["data"]["numberInSurah"]
-            str = `<label class="glass-label">Surah: ${surah}</label> <label class="glass-label">Ayat: ${noAyah}</label>`
+            let audioSrc = `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${number}.mp3`;
+            str = 
+            `
+                <label class="glass-label">Surah: ${surah}</label><label class="glass-label">Ayat: ${noAyah}</label>
+                <br>
+                <audio controls>
+                    <source src="${audioSrc}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `
+
             document.getElementById("but").innerHTML = str;
             document.getElementById("ayah").innerHTML = ayat;
             console.log(data["data"]["surah"]["englishName"])

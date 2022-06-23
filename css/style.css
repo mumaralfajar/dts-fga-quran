@@ -7,7 +7,7 @@ body {
 
 @media screen and (max-width: 600px) {
     body {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 }
 
@@ -47,6 +47,7 @@ sub {
 
 label {
     margin-top: 12px;
+    margin-left: 8px;
     font-family: 'Heebo', sans-serif;
     font-weight: 500;
     letter-spacing: 0.025rem;
@@ -68,6 +69,10 @@ label {
 
 #but {
     margin-top: 16px;
+}
+
+audio {
+    margin-top: 12px;
 }
 
 .background {
