@@ -1,7 +1,7 @@
-const btn = document.getElementById('btn');
-
 function getAyah(callback) {
-    fetch("https://api.alquran.cloud/v1/ayah/random/ar")
+    let ayah = Math.floor(Math.random() * 6236) + 1
+
+    fetch(`https://api.alquran.cloud/v1/ayah/${ayah}`)
         .then(response => response.json())
         .then(data => {
             let number = data["data"]["number"]
@@ -9,17 +9,15 @@ function getAyah(callback) {
             let surah = data["data"]["surah"]["englishName"]
             let noAyah = data["data"]["numberInSurah"]
             let audioSrc = `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${number}.mp3`;
-            str = 
-            `
+
+            document.getElementById("but").innerHTML = `
                 <label class="glass-label">Surah: ${surah}</label><label class="glass-label">Ayat: ${noAyah}</label>
                 <br>
                 <audio controls>
                     <source src="${audioSrc}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
-            `
-
-            document.getElementById("but").innerHTML = str;
+            `;
             document.getElementById("ayah").innerHTML = ayat;
             console.log(data["data"]["surah"]["englishName"])
             console.log(data["data"]["surah"]["number"])
@@ -27,8 +25,7 @@ function getAyah(callback) {
         fetch(`https://api.alquran.cloud/v1/ayah/${number}/id.indonesian`)
             .then(response => response.json())
             .then(data => {
-                let arti = data["data"]["text"]
-                document.getElementById("meaning").innerHTML = arti;
+                document.getElementById("meaning").innerHTML = data["data"]["text"];
                 console.log(data["data"]["text"])
             });
     });
@@ -57,7 +54,7 @@ window.onload = function () {
                 breakpoint: 768,
                 options: {
                     maxParticles: 200,
-                    color: '#48F2E3',
+                    color: '#9aeee6',
                     connectParticles: false
                 }
             }, {
